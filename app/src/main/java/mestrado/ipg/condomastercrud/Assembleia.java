@@ -12,7 +12,7 @@ public class Assembleia {
     private static Assembleia instance;
 
 
-    public Assembleia(long ID, String USER_ID, String MEETING_DATE, String PLACE_ID, String DESCRIPTION, String TITLE ) {
+    public Assembleia(long ID, String USER_ID, String MEETING_DATE, String PLACE_ID, String DESCRIPTION, String TITLE) {
         this._id = ID;
         this.USER_ID = USER_ID;
         this.MEETING_DATE = MEETING_DATE;
@@ -78,7 +78,6 @@ public class Assembleia {
     public void setTITLE(String TITLE) {
         this.TITLE = TITLE;
     }
-
 
 
 }

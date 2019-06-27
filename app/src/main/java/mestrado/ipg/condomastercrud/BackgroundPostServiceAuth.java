@@ -100,14 +100,12 @@ public class BackgroundPostServiceAuth extends Service {
             String _uri = "";
 
 
-
             for (Map.Entry<String, String> entry : hashMap.entrySet()) {
                 if (entry.getKey().equals("urlStr")) {
                     stringURL = entry.getValue();
                 } else if (entry.getKey().equals("_uri")) {
                     _uri = entry.getValue();
-                }
-                else if (entry.getKey().equals("wherefrom")) {
+                } else if (entry.getKey().equals("wherefrom")) {
                     wherefrom = entry.getValue();
                 }
             }
@@ -180,8 +178,7 @@ public class BackgroundPostServiceAuth extends Service {
 
                 if (wherefrom.equals("postAssembleia")) {
                     intent = new Intent("ServiceMarcAssembleia");
-                }
-                else if (wherefrom.equals("login")) {
+                } else if (wherefrom.equals("login")) {
                     intent = new Intent("ServiceLogin");
                 }
 

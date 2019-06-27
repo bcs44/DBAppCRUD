@@ -7,18 +7,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 
 public class AssembleiaDetalhes extends Activity {
@@ -43,7 +38,7 @@ public class AssembleiaDetalhes extends Activity {
         btEliminar = findViewById(R.id.btEliminar);
         btVoltar = findViewById(R.id.btmenu);
         btEditar = findViewById(R.id.btEditar);
-        btEnviarBD = findViewById(R.id.btEnviarBD );
+        btEnviarBD = findViewById(R.id.btEnviarBD);
 
         carregaDetalhesAssembleia();
         registerReceiver();
@@ -133,11 +128,7 @@ public class AssembleiaDetalhes extends Activity {
                 senDataBD();
             }
         });
-
-
     }
-
-
 
     private void carregaDetalhesAssembleia() {
         idAssembleia = getIntent().getIntExtra("idAssembleia", 0);
@@ -166,7 +157,7 @@ public class AssembleiaDetalhes extends Activity {
                 switch (wherefrom) {
                     case "getPlacesToMarcAssembleia":
                         context.stopService(new Intent(context, BackgroundGetServiceAuth.class));
-                    //    dealWithSpinners(data);
+                        //    dealWithSpinners(data);
                         //TODO
                         break;
                     case "postAssembleia":
@@ -175,7 +166,7 @@ public class AssembleiaDetalhes extends Activity {
                         AlertDialog.Builder dialogo = new
                                 AlertDialog.Builder(AssembleiaDetalhes.this);
                         dialogo.setTitle("Aviso");
-                        dialogo.setMessage("Assembleia Guardada: " + assembleia.getTITLE() );
+                        dialogo.setMessage("Assembleia Guardada: " + assembleia.getTITLE());
                         dialogo.setNeutralButton("OK", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 finish();

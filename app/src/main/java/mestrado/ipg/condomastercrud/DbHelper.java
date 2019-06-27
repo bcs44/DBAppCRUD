@@ -18,12 +18,12 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_CREATE = "create table "
             + TABLE_NAME
             + "( "
-            + ID    + " integer primary key autoincrement, "
-            + USER_ID       + " text not null, "
-            + MEETING_DATE  + " text not null, "
-            + PLACE_ID      + " text not null,"
-            + DESCRIPTION      + " text not null,"
-            + TITLE      + " text not null"
+            + ID + " integer primary key autoincrement, "
+            + USER_ID + " text not null, "
+            + MEETING_DATE + " text not null, "
+            + PLACE_ID + " text not null,"
+            + DESCRIPTION + " text not null,"
+            + TITLE + " text not null"
             + ") ";
 
     public DbHelper(Context context) {
@@ -34,6 +34,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(DATABASE_CREATE);
     }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.w(DbHelper.class.getName(),

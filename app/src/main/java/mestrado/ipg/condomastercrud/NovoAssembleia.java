@@ -54,7 +54,6 @@ public class NovoAssembleia extends Activity {
 
         datasource = new DBAdapter(this);
 
-
         final DatePickerDialog.OnDateSetListener initialDate = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
@@ -95,8 +94,6 @@ public class NovoAssembleia extends Activity {
             }
         });
 
-
-
         saveDateBTN.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 datasource.open();
@@ -110,14 +107,13 @@ public class NovoAssembleia extends Activity {
                 String description = String.valueOf(etDesc.getText());
                 String title = String.valueOf(etTitle.getText());
 
-                Assembleia assembleia = datasource.createAssembleia(user_id, meeting_date, place_id,description, title);
-
+                Assembleia assembleia = datasource.createAssembleia(user_id, meeting_date, place_id, description, title);
 
                 datasource.close();
                 AlertDialog.Builder dialogo = new
                         AlertDialog.Builder(NovoAssembleia.this);
                 dialogo.setTitle("Aviso");
-                dialogo.setMessage("Assembleia Criada: " + assembleia.getTITLE() );
+                dialogo.setMessage("Assembleia Criada: " + assembleia.getTITLE());
                 dialogo.setNeutralButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         finish();
@@ -129,7 +125,6 @@ public class NovoAssembleia extends Activity {
 
         registerReceiver();
         getPlaces();
-
     }
 
     private void updateLabel() {
@@ -137,7 +132,6 @@ public class NovoAssembleia extends Activity {
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.getDefault());
         etInitialDate.setText(sdf.format(myCalendarInitial.getTime()));
     }
-
 
     private void registerReceiver() {
 
@@ -224,6 +218,4 @@ public class NovoAssembleia extends Activity {
             }
         });
     }
-
-
 }

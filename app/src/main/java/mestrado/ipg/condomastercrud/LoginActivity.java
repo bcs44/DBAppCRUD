@@ -22,14 +22,12 @@ public class LoginActivity extends AppCompatActivity {
     EditText userTV, passTV;
     Button loginBTN;
     User user = User.getInstance();
-//    private DBAdapterUser dbAdapterUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //   dbAdapterUser = new DBAdapterUser(this);
         userTV = findViewById(R.id.user);
         passTV = findViewById(R.id.password);
         loginBTN = findViewById(R.id.login_btn);
@@ -57,9 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginActivity.this, BackgroundPostServiceAuth.class);
         intent.putExtra("ParamsMAP", params);
         startService(intent);
-
     }
-
 
     private void registerReceiver() {
 
@@ -116,8 +112,5 @@ public class LoginActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
     }
-
 }

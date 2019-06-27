@@ -40,8 +40,8 @@ public class MainActivity extends ListActivity {
         datasource.open();
         Cursor cursor = datasource.getAssembleias();
 
-        String[] columns = new String[] { "_title","_description" };
-        int[] to = new int[] { R.id._title, R.id._description};
+        String[] columns = new String[]{"_title", "_description"};
+        int[] to = new int[]{R.id._title, R.id._description};
 
         adapter = new SimpleCursorAdapter(
                 this,
@@ -52,13 +52,12 @@ public class MainActivity extends ListActivity {
         this.setListAdapter(adapter);
         datasource.close();
 
-        btNovoContacto = (Button) findViewById(R.id.btNovoContacto);
+        btNovoContacto = findViewById(R.id.btNovoContacto);
 
 
         btNovoContacto.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-               Intent novo = new Intent(MainActivity.this, NovoAssembleia.class);
+                Intent novo = new Intent(MainActivity.this, NovoAssembleia.class);
                 startActivity(novo);
             }
         });
@@ -68,13 +67,12 @@ public class MainActivity extends ListActivity {
 
     @Override
     protected void onResume() {
-        // TODO Auto-generated method stub
         super.onResume();
 
         datasource.open();
         Cursor cursor = datasource.getAssembleias();
-        String[] columns = new String[] { "_title","_description" };
-        int[] to = new int[] { R.id._title, R.id._description};
+        String[] columns = new String[]{"_title", "_description"};
+        int[] to = new int[]{R.id._title, R.id._description};
 
         adapter = new SimpleCursorAdapter(
                 this,
@@ -90,10 +88,7 @@ public class MainActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         Intent intent = new Intent(MainActivity.this, AssembleiaDetalhes.class);
         Cursor cursor = (Cursor) adapter.getItem(position);
-        intent.putExtra("idAssembleia",cursor.getInt(cursor.getColumnIndex("_id")));
+        intent.putExtra("idAssembleia", cursor.getInt(cursor.getColumnIndex("_id")));
         startActivity(intent);
     }
-
-
-
 }
