@@ -18,25 +18,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-        <activity android:name=".NovoAssembleia">
-        </activity>
-        <activity android:name=".MainActivity">
-        </activity>
-
-        <activity android:name=".AssembleiaDetalhes">
-        </activity>
+        <activity android:name=".NovoAssembleia"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".AssembleiaDetalhes"></activity>
 
         <service
             android:name=".BackgroundPostServiceAuth"
             android:enabled="true"
             android:exported="true" />
-
         <service
             android:name=".BackgroundGetServiceAuth"
             android:enabled="true"
             android:exported="true" />
+        <activity android:name=".ChatCondominio" ></activity>
+        <activity android:name=".SalaChat" ></activity>
     </application>
 
 </manifest>
